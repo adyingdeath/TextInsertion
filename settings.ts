@@ -40,7 +40,7 @@ export class TextInsertionPluginSettingTab extends PluginSettingTab {
                     this.display();
                 }));
 
-        containerEl.createEl('p', { text: 'You should disable and then re-enable the plugin whenever you make changes to the items.', cls: 'text-insertion-settings-hint' });
+        containerEl.createEl('p', { text: 'You should disable and then re-enable the plugin if you change displayName or delete an item.', cls: 'text-insertion-settings-hint' });
 
         this.plugin.settings.items.forEach((item, index) => {
             new Setting(containerEl)

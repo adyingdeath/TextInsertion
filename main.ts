@@ -30,9 +30,10 @@ export default class TextInsertionPlugin extends Plugin {
 	registerCommands() {
 		// 添加命令
 		this.settings.items.forEach((item, index) => {
+			const name = (item.displayName === undefined || item.displayName === null || item.displayName === "") ? `Insert ${item.text}` : item.displayName;
 			this.addCommand({
 				id: `insert-text-${index}`,
-				name: item.displayName || `Insert ${item.text}`,
+				name: name,
 				editorCallback: (editor: Editor) => {
 					editor.replaceSelection(item.text);
 				}
