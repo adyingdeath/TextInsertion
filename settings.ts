@@ -4,6 +4,7 @@ import TextInsertionPlugin from './main';
 interface Item {
     displayName: string;
     text: string;
+    enabled: boolean;
 }
 
 export interface TextInsertionPluginSettings {
@@ -34,10 +35,12 @@ export class TextInsertionPluginSettingTab extends PluginSettingTab {
             .addButton(button => button
                 .setButtonText('Add')
                 .onClick(() => {
-                    this.plugin.settings.items.push({ displayName: '', text: '' });
+                    this.plugin.settings.items.push({ displayName: '', text: '', enabled: true });
                     this.plugin.saveSettings();
                     this.display();
                 }));
+
+        containerEl.createEl('p', { text: 'You should disable and then re-enable the plugin whenever you make changes to the items.', cls: 'text-insertion-settings-hint' });
 
         this.plugin.settings.items.forEach((item, index) => {
             new Setting(containerEl)
@@ -65,4 +68,11 @@ export class TextInsertionPluginSettingTab extends PluginSettingTab {
                     }));
         });
     }
+}
+
+function randomId(len: number) {
+    const charSet = "0123456789abcdefghijklmnopqrstuvwxyz";
+    return Array.from({ length: len }).fill(0).map(
+        () => charSet[Math.floor(Math.random() * 36)]
+    ).join('');
 }

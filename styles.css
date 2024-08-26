@@ -6,3 +6,10 @@ available in the app when your plugin is enabled.
 If your plugin does not need CSS, delete this file.
 
 */
+
+.text-insertion-settings-hint {
+    font-size: 1em; /* 调整字体大小 */
+    color: #888; /* 调整字体颜色 */
+    margin-top: 5px; /* 调整上边距 */
+    margin-bottom: 15px; /* 调整下边距 */
+}
