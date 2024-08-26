@@ -1,0 +1,11 @@
+{
+	"id": "text-insertion",
+	"name": "Text Insertion",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "Add commands to insert any text(symbols, characters and sentences...)",
+	"author": "adyingdeath",
+	"authorUrl": "https://blog.adyingdeath.com/",
+	"fundingUrl": "https://blog.adyingdeath.com/",
+	"isDesktopOnly": false
+}
